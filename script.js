@@ -1,16 +1,15 @@
 let library = [];
 
-function Book (title, author, numberOfPages, read) {
+function Book (title, author, read) {
     this.title = title;
     this.author = author;
-    this.numberOfPages = numberOfPages;
     this.read = read;
     this.info = function() {
         if(read == true) {
-            return(title + " by " + author + ", " + numberOfPages + ", read")
+            return(title + " by " + author + ", " + " read")
         }
         else {
-            return(title + " by " + author + ", " + numberOfPages + ", not read")
+            return(title + " by " + author + ", " + " not read")
         }
         
     }
@@ -30,12 +29,16 @@ addBookToLibrary(book3);
 
 addBookToLibrary(new Book('Can I skip', 'a few steps', 2, false))
 
-const bookShelf = document.querySelector('.book-shelf');
 
+
+const bookShelf = document.querySelector('.book-shelf');
 function display() {
     for (let eachBook of library) {
         console.log(eachBook.info());
-        bookShelf.textContent += '| ' + eachBook.info() + ' |\r\n';
+
+        const book = document.createElement('div');
+        book.textContent = eachBook.info();
+        bookShelf.append(book);
     }
 }
 
