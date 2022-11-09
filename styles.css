@@ -4,6 +4,9 @@
     background-color: rgb(54, 42, 38);
 }
 
+#addBookBtn, .header, .book-shelf {
+    
+}
 .header {
     background-color: rgb(54, 42, 38);
     color: white;
@@ -27,12 +30,36 @@
     height: 20vh;
 }
 
-
-
 p:first-child {
     font-size: 20px;
     padding: 30px 0px;
 }
 p:last-child {
     padding: 0 0 25px;
+}
+
+#modal{
+    
+    /* display: none; */
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    top: 35%;
+    left: 40%;
+    width: 300px; /* Full width */
+    height: 200px; /* Full height */
+     
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+    background-color: blue !important;;
+}
+
+form div {
+    background-color: blue;
+    
 }
