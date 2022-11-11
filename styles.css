@@ -1,20 +1,24 @@
+:root {
+    --brown: rgb(54, 42, 38);
+    --grey: rgb(104, 74, 9);
+    --modal: rgba(0, 0, 0, 0.5);
+
+}
+
 * {
     text-align: center;
     margin: 0;
-    background-color: rgb(54, 42, 38);
+    background-color: var(--brown);
 }
 
-#addBookBtn, .header, .book-shelf {
-    
-}
 .header {
-    background-color: rgb(54, 42, 38);
+    background-color: var(--brown);
     color: white;
     padding: 30px;
 }
 
 .book-shelf {
-    background-color: rgb(54, 42, 38);
+    background-color: var(--brown);
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -40,14 +44,18 @@ p:last-child {
 
 #modal{
     
-    /* display: none; */
-    position: fixed; 
-    z-index: 1; /* Sit on top */
+    /*display: none;*/
+    display:block;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
     top: 35%;
-    left: 40%;
-    width: 300px; /* Full width */
-    height: 200px; /* Full height */
-     
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: var(--modal);
+    border: 2px solid orange;
+    border-radius: 10px;
 }
 
 form {
@@ -56,10 +64,40 @@ form {
     justify-content: center;
     gap: 50px;
     height: 100%;
-    background-color: blue !important;;
-}
-
-form div {
-    background-color: blue;
+    background-color: var(--grey);
+    padding: 40px 30px;
+    border-radius: 10px;
     
 }
+
+form h1 {
+    background-color: var(--grey);
+    color: white;
+     
+}
+input {
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: left;
+    background-color: rgb(245, 245, 245);
+    color: black;
+}
+input::placeholder {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+form button {
+    background-color: rgb(0, 110, 255);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
