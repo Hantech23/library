@@ -9,12 +9,24 @@
     text-align: center;
     margin: 0;
     background-color: var(--brown);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .header {
     background-color: var(--brown);
     color: white;
-    padding: 30px;
+    padding: 40px;
+    border-bottom: 1px solid black;
+}
+
+#addBookBtn {
+    color: gold;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 10px 20px 10px 15px;
+    background-color: rgb(27, 21, 21);
+    margin: 40px 0;
 }
 
 .book-shelf {
@@ -22,8 +34,10 @@
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 180px;
-    padding: 20px 100px;
+    padding: 20px 250px;
+    justify-items: center;
+    align-items: center;
+    row-gap: 5em;
 }
 
 .book-card {
@@ -32,6 +46,7 @@
     flex-direction: column;
     border: 1.5px solid black;
     height: 20vh;
+    width: 185px;
 }
 
 p:first-child {
@@ -88,7 +103,6 @@ input {
 }
 input::placeholder {
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
 }
 form button {
     background-color: rgb(0, 110, 255);
