@@ -42,10 +42,9 @@ p:last-child {
     padding: 0 0 25px;
 }
 
-#modal{
+.modal{
     
-    /*display: none;*/
-    display:block;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 50%;
@@ -56,6 +55,10 @@ p:last-child {
     background-color: var(--modal);
     border: 2px solid orange;
     border-radius: 10px;
+}
+
+.modal.active{
+    display: block;
 }
 
 form {
@@ -100,4 +103,17 @@ form button {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.overlay.active {
+    display: block;
+}

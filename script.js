@@ -46,20 +46,18 @@ function createBookCard(Book) {
     bookShelf.append(bookCard)
 }
 
-let modal = document.getElementById("modal");
+
 let modalBtn = document.getElementById("addBookBtn")
 
 modalBtn.onclick = function() {
-    modal.style.display = "block";
-}
-/*window.onclick = function(event) {
-    if (!event.target == modal) {
-      modal.style.display = "none";
-    }
+    console.log('yo modal button has been clicked')
+    document.querySelector(".modal").classList.add("active");
+    document.querySelector(".overlay").classList.add("active");
 }
 
 window.onclick = function(event) {
-    if(event.target != modal && event.target.parentNode != modal) {
-        modal.style.display = "none";
+    if (document.querySelector(".overlay").contains(event.target)) {
+        document.querySelector(".modal").classList.remove("active");
+        document.querySelector(".overlay").classList.remove("active");
     }
-}*/
+}
