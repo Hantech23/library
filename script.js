@@ -1,19 +1,8 @@
 let library = [];
 
-const book1 = new Book('Heart of Darkness', 'Joseph Conrad', 90, true)
-const book2 = new Book('Artemis Fowl', 'Eoin Colfer', 100, true)
-const book3 = new Book('Konzertstuck', 'Carl Maria von Weber', 30, true)
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-
-addBookToLibrary(new Book('Can I skip', 'a few steps', 2, false))
-addBookToLibrary(new Book('This should be in the next line', 'author', 2, false))
-
-function Book (title, author, read) {
+function Book (title, author) {
     this.title = title;
     this.author = author;
-    this.read = read;
 }
 
 function addBookToLibrary(Book) {
@@ -40,6 +29,8 @@ function createBookCard(Book) {
     bookCard.classList.add('book-card')
     title.textContent = Book.title;
     author.textContent = Book.author;
+
+
     
     bookCard.append(title)
     bookCard.append(author)
@@ -47,7 +38,7 @@ function createBookCard(Book) {
 }
 
 
-let modalBtn = document.getElementById("addBookBtn")
+const modalBtn = document.getElementById("addBookBtn")
 
 modalBtn.onclick = function() {
     console.log('yo modal button has been clicked')
@@ -57,7 +48,44 @@ modalBtn.onclick = function() {
 
 window.onclick = function(event) {
     if (document.querySelector(".overlay").contains(event.target)) {
-        document.querySelector(".modal").classList.remove("active");
-        document.querySelector(".overlay").classList.remove("active");
+        closeModal()
     }
 }
+function closeModal() {
+    document.querySelector(".modal").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("active");
+}
+
+const addBookForm = document.getElementById("addBookForm")
+
+function getBookFromForm() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    return new Book(title, author);
+}
+
+document.getElementById("submit").onclick = function(event) {
+    event.preventDefault()
+    const newBook = getBookFromForm()
+    addBookToLibrary(newBook)
+    updateBookShelf()
+    closeModal()
+}
+
+const updateBookShelf = () => {
+    resetBooksGrid()
+    display()
+  }
+  
+  const resetBooksGrid = () => {
+    bookShelf.innerHTML = ''
+  }
+
+/*
+document.getElementById("submit").onclick = function() {
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+
+    console.log(title.value + " " + author.value);
+}
+*/

@@ -1,7 +1,7 @@
 :root {
     --brown: rgb(54, 42, 38);
     --grey: rgb(104, 74, 9);
-    --modal: rgba(0, 0, 0, 0.5);
+    --modal: rgb(54, 42, 38);
 
 }
 
@@ -20,13 +20,18 @@
 }
 
 #addBookBtn {
-    color: gold;
+    color: rgba(255, 217, 0, 0.918);
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 1px;
     padding: 10px 20px 10px 15px;
-    background-color: rgb(27, 21, 21);
+    background-color: rgba(27, 21, 21, 0.671);
     margin: 40px 0;
+    border: 1px solid black;
+}
+#addBookBtn:hover {
+    background-color: rgba(0, 255, 255, 0.479);
+    cursor: pointer;
 }
 
 .book-shelf {
@@ -34,7 +39,7 @@
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 20px 250px;
+    padding: 0 250px;
     justify-items: center;
     align-items: center;
     row-gap: 5em;
@@ -68,7 +73,6 @@ p:last-child {
     width: auto;
     height: auto;
     background-color: var(--modal);
-    border: 2px solid orange;
     border-radius: 10px;
 }
 
@@ -76,20 +80,23 @@ p:last-child {
     display: block;
 }
 
+.modalContent {
+    border-radius: 10px;
+}
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
     height: 100%;
-    background-color: var(--grey);
+    background-color: var(--modal);
     padding: 40px 30px;
     border-radius: 10px;
-    
+    border: 1px solid black;
 }
 
 form h1 {
-    background-color: var(--grey);
+    background-color: var(--modal);
     color: white;
      
 }
