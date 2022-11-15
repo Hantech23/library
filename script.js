@@ -17,26 +17,37 @@ function display() {
         createBookCard(eachBook)
     }
 }
-
 display();
 
+function findBook(title) {
+
+}
 
 function createBookCard(Book) {
     const bookCard = document.createElement('div')
+    const removeBtn = document.createElement('span')
     const title = document.createElement('p')
     const author = document.createElement('p')
-
+    
     bookCard.classList.add('book-card')
+    removeBtn.classList.add('removeBtn')
+
+    removeBtn.textContent = "x";
+    removeBtn.onclick = function() {
+        console.log('remove button activated')
+        const index = library.indexOf(Book)
+        library.splice(index, 1)
+        updateBookShelf()
+    }
     title.textContent = Book.title;
     author.textContent = Book.author;
 
 
-    
+    bookCard.append(removeBtn)
     bookCard.append(title)
     bookCard.append(author)
     bookShelf.append(bookCard)
 }
-
 
 const modalBtn = document.getElementById("addBookBtn")
 
@@ -75,13 +86,20 @@ document.getElementById("submit").onclick = function(event) {
 const updateBookShelf = () => {
     resetBooksGrid()
     display()
-  }
+}
   
-  const resetBooksGrid = () => {
+const resetBooksGrid = () => {
     bookShelf.innerHTML = ''
-  }
-
+}
 /*
+document.querySelector('.removeBtn').onclick = function() {
+    console.log("remove button activated")
+}
+
+function removeBook() {
+    const title = removeBtn.parentNode.firstChild
+}
+
 document.getElementById("submit").onclick = function() {
     const title = document.getElementById("title");
     const author = document.getElementById("author");
