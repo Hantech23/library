@@ -11,17 +11,12 @@ function addBookToLibrary(Book) {
 
 const bookShelf = document.querySelector('.book-shelf');
 
-
 function display() {
     for (let eachBook of library) {
         createBookCard(eachBook)
     }
 }
 display();
-
-function findBook(title) {
-
-}
 
 function createBookCard(Book) {
     const bookCard = document.createElement('div')
@@ -39,9 +34,9 @@ function createBookCard(Book) {
         library.splice(index, 1)
         updateBookShelf()
     }
+
     title.textContent = Book.title;
     author.textContent = Book.author;
-
 
     bookCard.append(removeBtn)
     bookCard.append(title)
@@ -91,19 +86,3 @@ const updateBookShelf = () => {
 const resetBooksGrid = () => {
     bookShelf.innerHTML = ''
 }
-/*
-document.querySelector('.removeBtn').onclick = function() {
-    console.log("remove button activated")
-}
-
-function removeBook() {
-    const title = removeBtn.parentNode.firstChild
-}
-
-document.getElementById("submit").onclick = function() {
-    const title = document.getElementById("title");
-    const author = document.getElementById("author");
-
-    console.log(title.value + " " + author.value);
-}
-*/
